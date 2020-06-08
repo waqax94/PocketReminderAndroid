@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SignUpActivity"
+    tools:showIn="@layout/activity_sign_up">
+
+    <RelativeLayout
+        android:id="@+id/signupParentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:id="@+id/signupTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Create an Account"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="26dp"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/signupScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/signupTitle">
+
+            <RelativeLayout
+                android:id="@+id/signupMainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/signupNameLayout"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp">
+
+                    <EditText
+                        android:id="@+id/signupFirtName"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:hint="First Name"
+                        android:singleLine="true"
+                        android:background="@drawable/textfield_style1"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/signupLastName"/>
+
+                    <EditText
+                        android:id="@+id/signupLastName"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:hint="Last Name"
+                        android:singleLine="true"
+                        android:layout_toRightOf="@id/signupFirtName"
+                        android:background="@drawable/textfield_style1"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/signupUsername"/>
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/signupUsername"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/signupNameLayout"
+                    android:hint="Username"
+                    android:singleLine="true"
+                    android:background="@drawable/textfield_style1"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/signupEmail"/>
+
+                <EditText
+                    android:id="@+id/signupEmail"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/signupUsername"
+                    android:hint="Email"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/textfield_style1"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/signupPhone"/>
+
+                <RelativeLayout
+                    android:id="@+id/signupPhoneLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/signupEmail">
+
+                    <EditText
+                        android:id="@+id/signupPhone"
+                        android:layout_width="270dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:hint="Phone"
+                        android:singleLine="true"
+                        android:background="@drawable/textfield_style1"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/signupPassword"/>
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/signupPassword"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/signupPhoneLayout"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:background="@drawable/textfield_style1"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/signupConfirmPw"/>
+
+                <EditText
+                    android:id="@+id/signupConfirmPw"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/signupPassword"
+                    android:hint="Confirm password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:background="@drawable/textfield_style1"
+                    android:imeOptions="actionDone"/>
+
+                <Button
+                    android:id="@+id/signupBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignEnd="@id/signupConfirmPw"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@id/signupConfirmPw"
+                    android:text="Sign Up"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btn_style1"/>
+
+                <TextView
+                    android:id="@+id/signupAccounttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already Have An Account?"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:layout_below="@id/signupBtn"/>
+
+                <Button
+                    android:id="@+id/signupLoginBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/signupAccounttext"
+                    android:text="Login"
+                    android:textStyle="bold"
+                    android:textSize="19dp"
+                    android:background="@drawable/btn_style2"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

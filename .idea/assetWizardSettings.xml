@@ -35,8 +35,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="D:\Waqas\Pocket Reminder Project\Icons\password.png" />
-                                      <entry key="outputName" value="password" />
+                                      <entry key="imageAsset" value="D:\Waqas\Pocket Reminder Project\Icons\back.png" />
+                                      <entry key="outputName" value="back" />
                                     </map>
                                   </option>
                                 </PersistentState>
