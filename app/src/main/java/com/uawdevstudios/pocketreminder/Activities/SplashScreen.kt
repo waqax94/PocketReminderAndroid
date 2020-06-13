@@ -1,8 +1,9 @@
-package com.uawdevstudios.pocketreminder
+package com.uawdevstudios.pocketreminder.Activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity;
+import com.uawdevstudios.pocketreminder.R
 import java.lang.Exception
 
 class SplashScreen : AppCompatActivity() {
@@ -16,7 +17,7 @@ class SplashScreen : AppCompatActivity() {
                 try {
                     Thread.sleep(1000)
 
-                    val intent = Intent(baseContext,LoginActivity::class.java)
+                    val intent = Intent(baseContext, LoginActivity::class.java)
                     startActivity(intent)
                 }
                 catch (e: Exception){

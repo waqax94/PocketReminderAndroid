@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".LoginActivity"
-    android:background="@color/colorAccent"
+    tools:context=".Activities.LoginActivity"
     tools:showIn="@layout/activity_login">
 
     <RelativeLayout
@@ -80,7 +79,7 @@
                     android:layout_below="@id/loginPassword"
                     android:layout_marginTop="25dp"
                     android:text="Login"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorWhite"
                     android:background="@drawable/btn_style1"/>
 
                 <TextView

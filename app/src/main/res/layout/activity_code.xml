@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SplashScreen">
+    tools:context=".Activities.CodeActivity">
 
-
-    <include layout="@layout/content_splash_screen" />
-
+    <include layout="@layout/content_code" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

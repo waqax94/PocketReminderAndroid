@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".SignUpActivity"
+    tools:context=".Activities.SignUpActivity"
     tools:showIn="@layout/activity_sign_up">
+
 
     <RelativeLayout
         android:id="@+id/signupParentLayout"
@@ -45,7 +46,7 @@
                     android:layout_marginTop="35dp">
 
                     <EditText
-                        android:id="@+id/signupFirtName"
+                        android:id="@+id/signupFirstName"
                         android:layout_width="130dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="5dp"
@@ -62,58 +63,141 @@
                         android:layout_marginLeft="5dp"
                         android:hint="Last Name"
                         android:singleLine="true"
-                        android:layout_toRightOf="@id/signupFirtName"
+                        android:layout_toRightOf="@id/signupFirstName"
                         android:background="@drawable/textfield_style1"
                         android:imeOptions="actionNext"
                         android:nextFocusDown="@id/signupUsername"/>
 
                 </RelativeLayout>
 
-                <EditText
-                    android:id="@+id/signupUsername"
-                    android:layout_width="270dp"
-                    android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:layout_below="@id/signupNameLayout"
-                    android:hint="Username"
-                    android:singleLine="true"
-                    android:background="@drawable/textfield_style1"
-                    android:imeOptions="actionNext"
-                    android:nextFocusDown="@id/signupEmail"/>
-
-                <EditText
-                    android:id="@+id/signupEmail"
-                    android:layout_width="270dp"
-                    android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:layout_below="@id/signupUsername"
-                    android:hint="Email"
-                    android:singleLine="true"
-                    android:inputType="textEmailAddress"
-                    android:background="@drawable/textfield_style1"
-                    android:imeOptions="actionNext"
-                    android:nextFocusDown="@id/signupPhone"/>
-
-                <RelativeLayout
-                    android:id="@+id/signupPhoneLayout"
+                <TextView
+                    android:id="@+id/signupUsernameInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:textSize="9dp"
+                    android:textColor="@color/colorLightGrey"
+                    android:text="Username info"
+                    android:layout_below="@id/signupNameLayout"
+                    android:layout_alignStart="@id/signupUsernameLayout"
+                    android:visibility="invisible"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/signupUsernameLayout"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@id/signupEmail">
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/signupNameLayout">
 
                     <EditText
-                        android:id="@+id/signupPhone"
-                        android:layout_width="270dp"
+                        android:id="@+id/signupUsername"
+                        android:layout_width="210dp"
                         android:layout_height="40dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="30dp"
-                        android:hint="Phone"
+                        android:hint="Username"
                         android:singleLine="true"
                         android:background="@drawable/textfield_style1"
                         android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/signupEmail"/>
+
+                    <Button
+                        android:id="@+id/signupUsernameCheckBtn"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@id/signupUsername"
+                        android:text="Check"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@drawable/btn_style2"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/signupEmailInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLightGrey"
+                    android:layout_marginTop="23dp"
+                    android:textSize="9dp"
+                    android:layout_alignStart="@id/signupEmailLayout"
+                    android:layout_below="@id/signupUsernameLayout"
+                    android:text="Email Info"
+                    android:visibility="invisible"/>
+
+                <RelativeLayout
+                    android:id="@+id/signupEmailLayout"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/signupUsernameLayout">
+
+                    <EditText
+                        android:id="@+id/signupEmail"
+                        android:layout_width="210dp"
+                        android:layout_height="40dp"
+                        android:hint="Email"
+                        android:singleLine="true"
+                        android:inputType="textEmailAddress"
+                        android:background="@drawable/textfield_style1"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/signupPhone"/>
+
+                    <Button
+                        android:id="@+id/signupEmailCheckBtn"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@id/signupEmail"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Check"
+                        android:background="@drawable/btn_style2"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/signupPhoneLayout"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/signupEmailLayout"
+                    android:layout_marginTop="30dp">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/signupCCP"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
+                        app:ccp_autoDetectCountry="true"
+                        app:ccp_autoFormatNumber="true"
+                        app:ccp_showArrow="true"
+                        app:ccp_hintExampleNumberType="MOBILE"
+                        app:ccp_countryAutoDetectionPref="LOCALE_SIM_NETWORK"
+                        android:background="@drawable/textfield_style1"/>
+
+                    <EditText
+                        android:id="@+id/signupPhone"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:hint="Phone"
+                        android:editable="false"
+                        android:inputType="phone"
+                        android:layout_toRightOf="@id/signupCCP"
+                        android:singleLine="true"
+                        android:maxLength="15"
+                        android:background="@drawable/textfield_style1"
+                        android:imeOptions="actionNext"
                         android:nextFocusDown="@id/signupPassword"/>
+
+                    <ImageView
+                        android:id="@+id/signupPhoneCheck"
+                        android:padding="10dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/tick"
+                        android:visibility="invisible"
+                        android:background="@drawable/textfield_style1"/>
 
                 </RelativeLayout>
 
@@ -129,7 +213,19 @@
                     android:singleLine="true"
                     android:background="@drawable/textfield_style1"
                     android:imeOptions="actionNext"
+                    android:maxLength="15"
                     android:nextFocusDown="@id/signupConfirmPw"/>
+
+                <TextView
+                    android:id="@+id/signupPasswordInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*Password must be between 8 to 15 characters"
+                    android:textColor="@color/colorLightGrey"
+                    android:textSize="9dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignLeft="@id/signupPassword"
+                    android:layout_below="@id/signupPhoneLayout"/>
 
                 <EditText
                     android:id="@+id/signupConfirmPw"
@@ -141,6 +237,7 @@
                     android:hint="Confirm password"
                     android:inputType="textPassword"
                     android:singleLine="true"
+                    android:maxLength="15"
                     android:background="@drawable/textfield_style1"
                     android:imeOptions="actionDone"/>
 
@@ -152,7 +249,7 @@
                     android:layout_marginTop="25dp"
                     android:layout_below="@id/signupConfirmPw"
                     android:text="Sign Up"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorWhite"
                     android:background="@drawable/btn_style1"/>
 
                 <TextView

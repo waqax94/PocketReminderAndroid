@@ -1,4 +1,4 @@
-package com.uawdevstudios.pocketreminder
+package com.uawdevstudios.pocketreminder.Activities
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import com.uawdevstudios.pocketreminder.R
 
 import kotlinx.android.synthetic.main.content_login.*
 import java.lang.Exception
@@ -48,6 +49,11 @@ class LoginActivity : AppCompatActivity() {
 
         })
 
+        loginForgotpw.setOnClickListener {
+            val intent = Intent(applicationContext,CodeActivity::class.java);
+            startActivity(intent)
+        }
+
 
         loginBtn.setOnClickListener {
             if(validateRequired()){
@@ -59,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginSigninbtn.setOnClickListener {
-            val intent = Intent(baseContext,SignUpActivity::class.java)
+            val intent = Intent(baseContext, SignUpActivity::class.java)
             startActivity(intent)
         }
 
