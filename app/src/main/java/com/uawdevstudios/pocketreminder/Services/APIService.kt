@@ -37,4 +37,7 @@ interface APIService {
     @POST("validateemail")
     fun checkEmail(@Field("email") email: String?): Call<ServerResponse>
 
+    @FormUrlEncoded
+    @POST("codegenerator")
+    fun codeGenerator(@Field("email") email: String?): Call<ServerResponse>
 }

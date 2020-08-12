@@ -10,8 +10,11 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="wrong_email"><u>Wrong email?</u></string>
+    <string name="email_info_text">Enter the verification code below, that has been sent to the above email</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
-    <string name="wrong_email"><u>Wrong email?</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
